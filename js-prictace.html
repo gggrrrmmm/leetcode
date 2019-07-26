@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*  ----------1----------
+ var a = 10
+ function foo () {
+   console.log(a)
+   //  undefined  使用var关键字声明的变量在Javascript中会被提升，并在内存中分配值undefined，但初始化恰发生在你给变量赋值的地方，
+  //   另外，var声明变量是函数作用域，而let和const是块作用域的。所以就是这个过程的样子。
+   var a = 20
+ }
+ foo()
+ */
+
+/*
+-------------2--------
+var a = 10
+function foo () {
+    console.log(a)
+    // 报错 Uncaught ReferenceError: Cannot access 'a' before initialization
+    // let 和const声明可以让变量在其作用域上受限于它所使用的块，语句或表达式。与var不同的是，这些变量没有被提升，并且有一个所谓的暂时死区（TDZ）
+    // 试图访问TDZ中的这些变量将引发RefernceError,因为只有在执行到达到声明时才能访问他们。
+    let a = 20
+}
+foo()
+ */
+/*
+-------------3--------
+ */
+var array = []
+for(var i = 0; i< 3; i++) {
+    array.push(()=>i)
+    console.log(array)
+}
+var newArray = array.map(el => el())
+console.log(newArray)
+
+</script>
+</body>
+</html>
